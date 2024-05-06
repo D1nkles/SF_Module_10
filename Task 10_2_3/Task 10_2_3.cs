@@ -5,8 +5,17 @@
 
 class Worker : IWorker
 {
-    public void Build() 
+    void IWorker.Build()
     {
         Console.WriteLine("Я построил!");
     }
+}
+
+class Program 
+{
+    static void Main(string[] args) 
+    {
+        var worker = new Worker();
+        ((IWorker)worker).Build();
+    } 
 }
